@@ -6,6 +6,7 @@ import { addHours } from 'date-fns'
 import { Nabvar, CalendarEvent, CalendarModal } from "../components"
 
 import { localizer, getMessagesES } from '../../helpers'
+import { useUiStore } from '../../hooks/useUiStore'
 
 
 
@@ -28,6 +29,8 @@ export const CalendarPage = () => {
 
     const [lastView, setLastView] = useState( localStorage.getItem('lastView-calendarapp') || 'month' )
 
+    const { openDateModal } = useUiStore()
+
     const eventStyleGetter = ( event, start, end, isSelected ) => {
 
         const style = {
@@ -44,7 +47,7 @@ export const CalendarPage = () => {
 
 
     const onDoudleClick = ( event ) => {
-        console.log({ doudleClick: event });
+        openDateModal()
     }
     
     const onSelect = ( event ) => {
