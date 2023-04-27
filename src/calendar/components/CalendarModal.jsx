@@ -66,6 +66,8 @@ export const CalendarModal = () => {
         }
     },[activeEvent])
     
+
+    
     const onInputChange = ({ target }) => {
         setFormValues({
             ...formValues,
@@ -73,6 +75,8 @@ export const CalendarModal = () => {
         })
     }
     
+
+
     const onDateChenge = ( event, changing ) => {
         setFormValues({
             ...formValues,
@@ -80,9 +84,13 @@ export const CalendarModal = () => {
         })
     }
 
+
+
     const onCloseModal = () => {
         closeDateModal()
     }
+
+
 
     const onSubmit = async( event ) => {
         event.preventDefault()
