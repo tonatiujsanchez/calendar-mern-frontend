@@ -12,6 +12,7 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 
 import { useUiStore, useCalendarStore } from '../../hooks';
 import { useEffect } from 'react';
+import { getEnvVariables } from '../../helpers';
 
 registerLocale('es', es)
 
@@ -26,7 +27,11 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
-Modal.setAppElement('#root');
+
+if( getEnvVariables().VITE_MODE !== 'test' ){
+    Modal.setAppElement('#root');
+}
+
 
 
 
